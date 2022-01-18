@@ -39,7 +39,7 @@ const createShortCode = async (url) => {
     IndexName: "longUrlIndex",
     KeyConditionExpression: "longUrl = :longUrl",
     ExpressionAttributeValues: {
-      ':longUrl': url
+      ":longUrl": url,
     },
   };
 
@@ -108,6 +108,10 @@ function buildResponse(statusCode, body) {
     statusCode: statusCode,
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Origin":
+        "https://url-shortener-serverless.netlify.app/",
+      "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
     },
     body: JSON.stringify(body),
   };
