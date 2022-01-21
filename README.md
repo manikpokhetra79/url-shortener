@@ -53,7 +53,7 @@ This repository contains the lambda function code which is saved in index.js fil
 ### DynamoDB Table configuration
 
 - Partition Key : urlCode
-- Global secondary : longUrlIndex
+- Global secondary Index : longUrl
 
 ### IAM role configuration
 - Create a new IAM role for the lambda function to work with all required permissions.
